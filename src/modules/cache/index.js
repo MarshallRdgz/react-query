@@ -2,9 +2,9 @@ import React from "react";
 import { useQuery, useQueryCache, QueryCache } from "react-query";
 
 const Cache = () => {
-  //const queryCache = useQueryCache();
   const { data } = useQuery("listRick");
   console.log("dataUseQuery--->", data);
+
   const generateCart = () => {
     return data.results.map((item, index) => {
       return (

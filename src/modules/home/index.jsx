@@ -9,18 +9,8 @@ const Home = () => {
     params: { id },
   } = useRouteMatch();
   const { push } = useHistory();
-  const { data } = useQuery(["listRick"], async () => await getRick());
 
-  const getAxios = async () => {
-    axios
-      .get(`https://rickandmortyapi.com/api/character`)
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+  const { data } = useQuery(["listRick"], async () => await getRick());
 
   const goCache = () => {
     push("/cache");
@@ -29,13 +19,6 @@ const Home = () => {
   return (
     <>
       <div>
-        <button
-          onClick={() => {
-            getAxios();
-          }}
-        >
-          getAxios
-        </button>
         <button
           onClick={() => {
             goCache();
