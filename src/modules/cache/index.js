@@ -2,17 +2,14 @@ import React from "react";
 import { useQuery, useQueryCache, QueryCache } from "react-query";
 
 const Cache = () => {
-  const { data } = useQuery("listRick");
-  console.log("dataUseQuery--->", data);
+  const { data: digimon } = useQuery("listRick");
 
   const generateCart = () => {
-    return data.results.map((item, index) => {
+    return digimon.map((item, index) => {
       return (
         <div style={{ marginBottom: "20px" }}>
-          <img src={item.image} />
+          <img src={item.img} />
           <div>Name : {item.name}</div>
-          <div>Status : {item.status}</div>
-          <div>Specie : {item.species}</div>
         </div>
       );
     });
@@ -20,7 +17,7 @@ const Cache = () => {
 
   return (
     <>
-      {!!data && (
+      {!!digimon && (
         <div
           style={{
             width: "100vw",

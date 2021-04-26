@@ -11,7 +11,7 @@ const Home = () => {
   const { push } = useHistory();
 
   const { data } = useQuery(["listRick"], async () => await getRick());
-
+  console.log("DATA-->", data);
   const goCache = () => {
     push("/cache");
   };
