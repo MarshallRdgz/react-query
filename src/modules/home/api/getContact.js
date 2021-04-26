@@ -1,2 +1,2 @@
 export default () =>
-  fetch(`https://rickandmortyapi.com/api/character`).then((res) => res.json());
+  fetch(`https://digimon-api.vercel.app/api/digimon`).then((res) => res.json());
