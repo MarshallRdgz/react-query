@@ -1,14 +1,15 @@
 import React from "react";
-import { useQuery, useQueryCache, QueryCache } from "react-query";
+import { useQuery } from "react-query";
 
 const Cache = () => {
-  const { data: digimon } = useQuery("listRick");
+  const { data: digimon } = useQuery("digimon");
 
   const generateCart = () => {
     return digimon.map((item, index) => {
+      const key = `digi-${index}`;
       return (
-        <div style={{ marginBottom: "20px" }}>
-          <img src={item.img} />
+        <div key={key} style={{ marginBottom: "20px" }}>
+          <img src={item.img} alt={item.name} />
           <div>Name : {item.name}</div>
         </div>
       );
